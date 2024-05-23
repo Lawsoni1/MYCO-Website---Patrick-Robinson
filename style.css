@@ -1,11 +1,16 @@
 body {
     margin: 0 ;
     font-weight: 300;
+    background-color: black;
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
+}
+
+header {
+    background: grey;
 }
 
 header::after {
@@ -14,9 +19,10 @@ header::after {
     clear: both;
 }
 
-.logo {
+#logo {
     float: left;
-    width: 500px;
+    height: 50px;
+    padding: 10px 0;
 }
 
 nav {
@@ -31,4 +37,28 @@ nav ul {
 
 nav li {
     display: inline-block;
+    margin-left: 70px;
+    padding-top: 23px;
+
+    position: relative;
 }
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: black
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: black
+}
+
