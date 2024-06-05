@@ -1,12 +1,16 @@
 @font-face {
-    font-family: NeueMachinaRugular;
+    font-family: NeueMachinaRegular;
     src: url("assets/NeueMachina-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: NeueMachinaUltraBond;
+    src: url("assets/NeueMachina-Ultrabold.otf") format("opentype");
 }
 
 body {
     margin: 0;
-    font-family: NeueMachinaRugular;
-    background-image: url(assets/heroimageplaceholder.png);
+    font-family: NeueMachinaRegular;
 }
 
 .navbar {
@@ -20,34 +24,35 @@ body {
 .nav-left, .nav-right {
     display: flex;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 
-.nav-left li, .nav-right li {
-    margin: 0 5px; /* Reduced margin for closer spacing within groups */
-}
+.nav-container-left, .nav-container-right {
+    display: flex;
+    list-style-type: none;
+    margin-left: 100px;
+    margin-right: 100px;
+}       
 
 .navbar a {
     color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 10px 15px;
     border: 2px solid transparent;
-    border-radius: 15px;
+    border-radius: 30px;
     transition: all 0.3s ease;
     text-transform: uppercase;
 }
 
 .navbar a:hover {
-    filter: blur(8px);
+    background-color: black;
+    color: white;    
 }
 
 .logo {
     color: black;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-align: center;
+    font-size: 50px;
+    font-family: NeueMachinaUltraBond;
+
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
