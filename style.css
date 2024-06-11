@@ -8,52 +8,82 @@
     src: url("assets/NeueMachina-Ultrabold.otf") format("opentype");
 }
 
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: NeueMachinaRegular;
 }
 
-.navbar {
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px 50px;
-    position: relative;
 }
 
-.nav-left, .nav-right {
+.nav-left-container,
+.nav-right-container {  
     display: flex;
+    padding-left: 180px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px; 
     list-style-type: none;
 }
 
-.nav-container-left, .nav-container-right {
-    display: flex;
-    list-style-type: none;
-    margin-left: 100px;
-    margin-right: 100px;
-}       
-
-.navbar a {
+nav ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 10px 15px;
     border: 2px solid transparent;
     border-radius: 30px;
     transition: all 0.3s ease;
-    text-transform: uppercase;
+    text-transform: uppercase;  
 }
 
-.navbar a:hover {
+nav ul li a:hover {
     background-color: black;
     color: white;    
 }
 
-.logo {
-    color: black;
+nav .logo {
+    flex-grow: 0;
+    text-align: center;
+}
+
+nav .logo a {
     font-size: 50px;
     font-family: NeueMachinaUltraBond;
+    color: white;
+    text-decoration: none;
+}
 
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.hero-image {
+    background-image: url("assets/heroimageplaceholder.png");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
 }
