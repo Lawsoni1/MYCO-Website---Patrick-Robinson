@@ -73,6 +73,10 @@ nav .logo a {
     text-decoration: none;
 }
 
+.home-page-container {
+    display: flex;
+}
+
 .hero-image {
     background-image: url("assets/heroimageplaceholder.png");
     width: 100%;
@@ -80,7 +84,28 @@ nav .logo a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
 }
+
+.right-box {
+    flex: 1;
+    background-color: lightcoral;
+    display: flex;
+    align-items: center;
+}
+
+.slide-show {
+    flex: 1;
+    background-color: lightblue;
+    display: flex;
+}
+
+.left-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 
 @media (max-width: 768px) {
     nav ul {
