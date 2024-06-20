@@ -94,18 +94,37 @@ nav .logo a {
     align-items: center;
 }
 
-.slide-show {
-    flex: 1;
-    background-color: lightblue;
-    display: flex;
-}
-
 .left-container {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
+.slide-show {
+    flex: 1;
+    background-color: lightblue;
+    display: flex;
+}
+
+.slide-show .track {
+    animation: scroll 15s 0.5s linear infinite;
+}
+
+.slide-show .product {
+    flex: 1;
+    padding: 100px;
+    background-color: red;
+    display: flex;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(calc(-150px * 5));
+    }
+}
 
 @media (max-width: 768px) {
     nav ul {
