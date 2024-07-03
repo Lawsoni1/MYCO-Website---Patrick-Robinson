@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYCO</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <nav>
@@ -18,25 +19,99 @@
         </div>
         <ul>
             <li><a href="#learn">Learn</a></li>
-            <li><a href="#cart">Cart</a></li>
+            <li><a href="#cart" id="cartButton">Cart</a></li>
             <div class="nav-right-container"></div>
         </ul>
     </nav>
+
+    <div id="cartPopup" class="cart-popup">
+        <div class="cart-content">
+            <span id="closeCart" class="close">&times;</span>
+            <h2>Cart</h2>
+            <p>Your cart is empty</p>
+        </div>
+    </div>
+
     <div class="home-page-container">
         <div class="left-container">
-            <div class="hero-image"></div>
-            <div class="right-box">Box 2</div>
-            <div class="right-box">Box 3</div>
-            <div class="right-box">Box 4</div>
+            <div class="hero-image">
+                <h1>THIS WILL HEAL YOU</h1>
+            </div> 
+            <div class="information-container">
+                <p>
+                    Integer auctor nibh cursus purus venenatis, 
+                    in vehicula augue tempor. Quisque a pretium elit. 
+                    Maecenas ultrices sollicitudin leo non tincidunt. 
+                    Duis rhoncus ullamcorper sapien, id maximus dui dapibus quis. 
+                    Cras in magna ligula. In hac habitasse platea dictumst. 
+                    Quisque tincidunt nisi sed sem faucibus tempor ullamcorper accumsan odio. 
+                    Aenean dictum, lorem sodales cursus gravida, 
+                    felis odio pulvinar dui, eget imperdiet ex mi sit amet dui.
+                </p>
+                <ul>
+                    <li><a href="#shop" class="button">Shop</a></li>
+                </ul>
+            </div>
+
+            <div class="benefits-container">
+                <h1>BENEFITS</h1>
+                <div class="benefits-content">
+                    <div class="benefits">
+                        <div class="benefit">
+                            <h2>NOURISH THE BODY</h2>
+                            <p>Essential protein repairs muscles and develops lean muscle mass, nourishing the body so it can keep performing today and tomorrow.</p>
+                        </div>
+                        <div class="benefit">
+                            <h2>SUSTAIN THE MIND</h2>
+                            <p>Clean sustainable energy from guarana seed and green tea paired with L-theanine will leave you feeling energized without feeling frantic, and focused without crashing.</p>
+                        </div>
+                        <div class="benefit">
+                            <h2>ELEVATE EVERY DAY</h2>
+                            <p>A blend of vitamins, minerals, and amino acids helps your body and mind rise to the challenge of every day.</p>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="info-item">10G BUBBLY PLANT PROTEIN</div>
+                        <div class="info-item">135MG CLEAN CAFFEINE + THEANINE</div>
+                        <div class="info-item">ZERO SUGAR</div>
+                        <div class="info-item">ESSENTIAL VITAMINS + MINERALS</div>
+                        <div class="info-item">ABSOLUTELY NOTHING ARTIFICIAL</div>
+                        <div class="info-item">FRESH AND FRUITY</div>
+                        <div class="info-item">VEGAN, NON-GMO, GLUTEN FREE</div>
+                        <div class="info-item">STOMACH FRIENDLY</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animation-container">
+
+            </div>
+
+            <div class="nutrition-container">
+                <div class="nutrition-information">
+                    <div class="mushroom"></div>
+                </div>
+            </div>
+
         </div>
         <div class="slide-show">
             <div class="track">
-                <div class="product"></div>
-                <div class="product"></div>
-                <div class="product"></div>
-                <div class="product"></div>
+                <div class="product">
+                    <img src="assets/product.jpg">
+                </div>
+                <div class="product">
+                    <img src="assets/product2.webp">
+                </div>
+                <div class="product">
+                    <img src="assets/product3.avif">
+                </div>
+                <div class="product">
+                    <img src="assets/product4.avif">
+                </div>
             </div>
         </div>
+    </div>
+    <div class="footer">
     </div>
 </body>
 </html>
