@@ -24,18 +24,19 @@
         </ul>
     </nav>
 
-    <div id="cartPopup" class="cart-popup">
-        <div class="cart-content">
-            <span id="closeCart" class="close">&times;</span>
-            <h2>Cart</h2>
-            <p>Your cart is empty</p>
-        </div>
-    </div>
+    <button class="fixed-button">Menu</button>
 
+    <div id="cart" class="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items"></ul>
+    </div>
+    
     <div class="home-page-container">
+
         <div class="hero-image">
-            <h1>THIS WILL HEAL YOU</h1>
+            <h1>SUPER HEALING</h1>
         </div> 
+
         <div class="information-container">
             <p>
                 Integer auctor nibh cursus purus venenatis, 
@@ -51,85 +52,148 @@
                 <li><a href="#shop" class="button">Shop</a></li>
             </ul>
         </div>
+
         <div class="products">
             <div class="slide-show">
                 <div class="slide-container">
-                    <img src="./assets/product.jpg">
-                    <a href="#shop" class="button shop-button">Shop</a>
+                    <img src="./assets/Canrendergrape.png">
+                    <a href="#shop" class="add-button">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/product2.webp">
-                    <a href="#shop" class="button shop-button">Shop</a>
+                    <img src="./assets/Canrenderlemonice.png">
+                    <a href="#shop" class="add-button">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/product3.avif">
-                    <a href="#shop" class="button shop-button">Shop</a>
+                    <img src="./assets/Canrendermandarin.png">
+                    <a href="#shop" class="add-button">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/product4.avif">
-                    <a href="#shop" class="button shop-button">Shop</a>
+                    <img src="./assets/Canrenderpeach.png">
+                    <a href="#shop" class="add-button">Shop</a>
+                </div>
+                <div class="slide-container">
+                    <img src="./assets/Canrenderpear.png">
+                    <a href="#shop" class="add-button">Shop</a>
                 </div>
             </div>
             <div class="slide-show">
                 <div class="slide-container">
-                    <img src="./assets/product.jpg">
-                    <a href="#shop" class="button shop-button">Shop</a>
+                    <img src="./assets/Canrendergrape.png">
+                    <a href="#shop" class="add-button">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/product2.webp">
-                    <a href="#shop" class="button shop-button">Shop</a>
+                    <img src="./assets/Canrenderlemonice.png">
+                    <a href="#shop" class="add-button">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/product3.avif">
-                    <a href="#shop" class="button shop-button">Shop</a>
+                    <img src="./assets/Canrendermandarin.png">
+                    <a href="#shop" class="add-button">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/product4.avif">
-                    <a href="#shop" class="button shop-button">Shop</a>
+                    <img src="./assets/Canrenderpeach.png">
+                    <a href="#shop" class="add-button">Shop</a>
                 </div>
-            </div>
-        </div>
-        <div class="benefits-container">
-            <h1>BENEFITS</h1>
-            <div class="benefits-content">
-                <div class="benefits">
-                    <div class="benefit">
-                        <h2>NOURISH THE BODY</h2>
-                        <p>Essential protein repairs muscles and develops lean muscle mass, nourishing the body so it can keep performing today and tomorrow.</p>
-                    </div>
-                    <div class="benefit">
-                        <h2>SUSTAIN THE MIND</h2>
-                        <p>Clean sustainable energy from guarana seed and green tea paired with L-theanine will leave you feeling energized without feeling frantic, and focused without crashing.</p>
-                    </div>
-                    <div class="benefit">
-                        <h2>ELEVATE EVERY DAY</h2>
-                        <p>A blend of vitamins, minerals, and amino acids helps your body and mind rise to the challenge of every day.</p>
-                    </div>
-                </div>
-                <div class="info">
-                    <div class="info-item">10G BUBBLY PLANT PROTEIN</div>
-                    <div class="info-item">135MG CLEAN CAFFEINE + THEANINE</div>
-                    <div class="info-item">ZERO SUGAR</div>
-                    <div class="info-item">ESSENTIAL VITAMINS + MINERALS</div>
-                    <div class="info-item">ABSOLUTELY NOTHING ARTIFICIAL</div>
-                    <div class="info-item">FRESH AND FRUITY</div>
-                    <div class="info-item">VEGAN, NON-GMO, GLUTEN FREE</div>
-                    <div class="info-item">STOMACH FRIENDLY</div>
+                <div class="slide-container">
+                    <img src="./assets/Canrenderpear.png">
+                    <a href="#shop" class="add-button">Shop</a>
                 </div>
             </div>
         </div>
 
-        <div class="animation-container">
-            
+        <div class="benefits-container">
+            <h1>BENEFITS</h1>
+            <div class="benefits">
+                <div class="benefit">
+                    <h2>NOURISH THE BODY</h2>
+                    <p>Essential protein repairs muscles and develops lean muscle mass, nourishing the body so it can keep performing today and tomorrow.</p>
+                </div>
+                <div class="benefit">
+                    <h2>SUSTAIN THE MIND</h2>
+                    <p>Clean sustainable energy from guarana seed and green tea paired with L-theanine will leave you feeling energized without feeling frantic, and focused without crashing.</p>
+                </div>
+                <div class="benefit">
+                    <h2>ELEVATE EVERY DAY</h2>
+                    <p>A blend of vitamins, minerals, and amino acids helps your body and mind rise to the challenge of every day.</p>
+                </div>
+            </div>
         </div>
 
         <div class="nutrition-container">
-            <div class="nutrition-information">
-                <div class="mushroom"></div>
+
+            <div class="top-box">
+                <div class="top-item">Sustainable Production</div>
+                <div class="top-item">Improves Healing</div>
+                <div class="top-item">100% Natural Ingredients</div>            
+            </div>
+
+            <div class="bottom-box">
+                <div class="bottom-item">
+                    <img src="./assets/CellSymbol.jpg">
+                    Improved Cell Growth</div>
+                <div class="bottom-item">
+                    <img src="./assets/MushroomSymbol.jpg">
+                    Made from Mushrooms</div>
+                <div class="bottom-item">
+                    <img src="./assets/SugarSymbol.jpg">
+                    Low Cane Sugar</div>
+                <div class="bottom-item">
+                    <img src="./assets/TeaSymbol.jpg">
+                    One Month Fermentation</div>
             </div>
         </div>
     </div>
-    <div class="footer">
+
+    <div class="artwork-container">
+        <div class="artwork"></div>
+        <div class="artwork"></div>
+        <div class="artwork"></div>
+        <div class="artwork"></div>
+        <div class="artwork"></div>
+        <div class="artwork"></div>
+        <div class="artwork"></div>
+        <div class="artwork"></div>
+        <div class="artwork"></div>
+        <div class="artwork"></div>
     </div>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-signup">
+            <p>Sign up and receive 10% off your first order.</p>
+            <input type="email" placeholder="Enter your email">
+            <button>Sign Up</button>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Explore</h4>
+              <ul>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Science</a></li>
+                <li><a href="#">Ingredients</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Support</h4>
+              <ul>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Stockist</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Follow</h4>
+              <ul>
+                <li><a href="#">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>©2024 MYCO Superhealing. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+          </div>
+        </div>
+      </footer>
 </body>
 </html>
