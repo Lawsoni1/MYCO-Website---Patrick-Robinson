@@ -8,24 +8,40 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Nav bar -->
     <nav>
         <ul>
+            <!-- Left Container -->
             <div class="nav-left-container"></div>
             <li><a href="#shop">Shop</a></li>
             <li><a href="#stock">Stock</a></li>
         </ul>
+            <!-- Center logo -->
         <div class="logo">
             <a href="#">MYCO</a>
         </div>
         <ul>
+            <!-- Right Container -->
             <li><a href="#learn">Learn</a></li>
             <li><a href="#cart" id="cartButton">Cart</a></li>
             <div class="nav-right-container"></div>
         </ul>
     </nav>
 
+    <!-- Menu button for mobile view -->
     <button class="menu-button">Menu</button>
 
+    <!-- Overlay menu for mobile view -->
+    <div class="overlay" id="overlay">
+        <ul class="centered-menu">
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#stock">Stock</a></li>
+            <li><a href="#learn">Learn</a></li>
+            <li><a href="#cart">Cart</a></li>
+        </ul>
+    </div>
+
+    <!-- Cart section -->
     <div id="cart" class="cart">
         <h2>CART</h2>
         <p id="empty-cart-message" style="text-align: center;">Your Cart is Empty</p>
@@ -33,11 +49,16 @@
         <p id="total-price" style="display: none; text-align: right;"></p>
         <button id="checkout-button" style="display: none;">Checkout</button>
     </div>
-    
+
+    <!-- Main content -->
+
+    <!-- Hero image section -->
     <div class="home-page-container">
         <div class="hero-image">
             <h1>SUPER HEALING</h1>
         </div> 
+
+        <!-- Information section -->
 
         <div class="information-container">
             <p>
@@ -55,8 +76,12 @@
             </ul>
         </div>
 
+        <!-- Products slideshow section -->
+
         <div class="products">
             <div class="slide-show">
+
+                <!-- Individual slide items -->
                 <div class="slide-container">
                     <img src="./assets/Canrendergrape.png" alt="Grape">
                     <a href="#shop" class="add-button" data-name="Grape">Shop</a>
@@ -78,6 +103,9 @@
                     <a href="#shop" class="add-button" data-name="Pear">Shop</a>
                 </div>
             </div>
+
+            <!-- Repeat slide show for seemless tranistion -->
+
             <div class="slide-show">
                 <div class="slide-container">
                     <img src="./assets/Canrendergrape.png" alt="Grape">
@@ -101,6 +129,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Benefits section -->
 
         <div class="benefits-container">
             <h1>BENEFITS</h1>
@@ -119,6 +149,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Nutrition information section -->
 
         <div class="nutrition-container">
             <div class="top-box">
@@ -143,6 +175,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Artwork gallery section -->
 
     <div class="artwork-container">
         <div class="artwork">
@@ -176,6 +210,8 @@
             <img src="./assets/Artwork10.png" alt="Artwork10">
         </div>
     </div>
+
+    <!-- Footer section -->
 
     <footer>
         <div class="footer-container">

@@ -1,3 +1,4 @@
+/* Font Definitions */
 @font-face {
     font-family: NeueMachinaRegular;
     src: url("assets/NeueMachina-Regular.otf") format("opentype");
@@ -8,16 +9,58 @@
     src: url("assets/NeueMachina-Ultrabold.otf") format("opentype");
 }
 
+/* General Styles for All Elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
     font-family: NeueMachinaRegular;
 }
 
+/* Overlay for Mobile Menu */
+.overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
+}
+
+.overlay.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centered Menu Links */
+.centered-menu a {
+    text-transform: uppercase; 
+    font-size: 24px; 
+    font-family: NeueMachinaUltraBond;
+    margin: 20px; 
+    display: block; 
+    text-align: center;
+    color: white; 
+    text-decoration: none; 
+    padding: 10px; 
+    border-radius: 30px; 
+}
+
+.centered-menu a:hover {
+    background-color: black; 
+    color: white; 
+    padding: 10px; 
+    border-radius: 30px; 
+}
+
+/* Navigation Bar Styling */
 nav {
     position: absolute;
     top: 0;
@@ -30,17 +73,19 @@ nav {
     z-index: 10;
 }
 
+/* Navigation Menu List */
 nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    list-style: none; 
 }
 
 nav ul li {
     margin: 0 10px;
-    list-style-type: none;
 }
 
+/* Navigation Menu Links */
 nav ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -48,7 +93,7 @@ nav ul li a {
     border: 2px solid transparent;
     border-radius: 30px;
     transition: all 0.3s ease;
-    text-transform: uppercase;
+    text-transform: uppercase; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,6 +107,7 @@ nav ul li a:hover {
     color: white;
 }
 
+/* Logo Styling in Navigation */
 nav .logo {
     flex-grow: 0;
     text-align: center;
@@ -74,10 +120,12 @@ nav .logo a {
     text-decoration: none;
 }
 
+/* Menu Button for Mobile View */
 .menu-button {
     display: none;
 }
 
+/* Shopping Cart Styling */
 .cart {
     display: none;
     flex-direction: column;
@@ -102,6 +150,7 @@ nav .logo a {
     display: flex;
 }
 
+/* Cart Items List */
 #cart-items {
     list-style-type: none;
     padding: 0;
@@ -154,6 +203,7 @@ nav .logo a {
     padding-right: 20px;
 }
 
+/* Hero Image Styling */
 .hero-image {
     background-image: url("assets/DITHeroImage.png");
     width: 100%;
@@ -173,13 +223,15 @@ nav .logo a {
     color: rgb(57, 57, 58);
 }
 
+/* Home Page Container Styling */
 .home-page-container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: 230, 230, 230;
+    background-color: rgb(230, 230, 230);
 }
 
+/* Information Container Styling */
 .information-container {
     flex: 1;
     display: flex;
@@ -223,6 +275,7 @@ nav .logo a {
     color: black;
 }
 
+/* Product Image Slider */
 .products {
     overflow: hidden;
     white-space: nowrap;
@@ -242,6 +295,7 @@ nav .logo a {
     width: 600px;
 }
 
+/* Slide Container */
 .slide-container {
     position: relative;
     display: inline-block;
@@ -252,6 +306,7 @@ nav .logo a {
     transition: background-color 0.3s ease;
 }
 
+/* Add Button Styling */
 .add-button {
     position: absolute;
     bottom: 20px;
@@ -277,6 +332,7 @@ nav .logo a {
     color: black;
 }
 
+/* Benefits Container Styling */
 .benefits-container {
     flex: 1;
     display: flex;
@@ -289,6 +345,7 @@ nav .logo a {
     margin: 20px;
 }
 
+/* Nutrition Container Styling */
 .nutrition-container {
     display: flex;
     flex-direction: column;
@@ -297,6 +354,7 @@ nav .logo a {
     margin: 100px auto;
 }
 
+/* Top Box Styling */
 .top-box {
     display: flex;
     width: 100%;
@@ -312,6 +370,7 @@ nav .logo a {
     border: 2px solid #39393a; 
 }
 
+/* Bottom Box Styling */
 .bottom-box {
     display: flex;
     justify-content: space-between;
@@ -339,6 +398,7 @@ nav .logo a {
     border: 1px solid #fff; 
 }
 
+/* Artwork Container Styling */
 .artwork-container {
     display: flex;
     flex-wrap: wrap;
@@ -348,7 +408,8 @@ nav .logo a {
     margin: 0 auto; 
     padding: 20px 0;
 }
- 
+
+/* Artwork Item Styling */
 .artwork {
     position: relative;
     display: flex;
@@ -373,32 +434,33 @@ nav .logo a {
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
+/* Footer Styling */
 footer {
     background-color: #e6e6e6;
     padding: 20px;
     border-top: 1px solid #39393a;
-  }
+}
   
-  .footer-container {
+.footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-  }
+}
   
-  .footer-signup {
+.footer-signup {
     text-align: center;
     margin-bottom: 20px;
-  }
+}
   
-  .footer-signup input[type="email"] {
+.footer-signup input[type="email"] {
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-  }
+}
   
-  .footer-signup button {
+.footer-signup button {
     background-color: black;
     color: white;
     border: 2px solid transparent;
@@ -410,56 +472,56 @@ footer {
     width: 100px; 
     height: 35px; 
     font-size: 16px;
-  }
+}
   
-  .footer-links {
+.footer-links {
     display: flex;
     justify-content: space-between;
-  }
+}
   
-  .footer-column {
+.footer-column {
     flex: 1;
     margin: 0 15px;
-  }
+}
   
-  .footer-column h4 {
+.footer-column h4 {
     margin-bottom: 10px;
     font-size: 16px;
-  }
+}
   
-  .footer-column ul {
+.footer-column ul {
     list-style: none;
     padding: 0;
-  }
+}
   
-  .footer-column ul li {
+.footer-column ul li {
     margin-bottom: 8px;
-  }
+}
   
-  .footer-column ul li a {
+.footer-column ul li a {
     text-decoration: none;
     color: #333;
-  }
+}
   
-  .footer-bottom {
+.footer-bottom {
     text-align: center;
     margin-top: 20px;
-  }
+}
   
-  .footer-bottom p {
+.footer-bottom p {
     margin: 5px 0;
-  }
+}
   
-  .footer-bottom a {
+.footer-bottom a {
     text-decoration: none;
     color: #333;
-  }
+}
   
-  .footer-bottom a:hover {
+.footer-bottom a:hover {
     text-decoration: underline;
-  }
-  
+}
 
+/* Keyframes for Slider Animation */
 @keyframes slide {
     from {
         transform: translateX(0);
@@ -469,6 +531,7 @@ footer {
     }
 }
 
+/* Media Queries for Mobile View */
 @media (max-width: 800px) {
     nav ul {
         display: none;
