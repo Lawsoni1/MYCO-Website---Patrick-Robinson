@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYCO</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav>
@@ -24,15 +24,17 @@
         </ul>
     </nav>
 
-    <button class="fixed-button">Menu</button>
+    <button class="menu-button">Menu</button>
 
     <div id="cart" class="cart">
-        <h2>Cart</h2>
+        <h2>CART</h2>
+        <p id="empty-cart-message" style="text-align: center;">Your Cart is Empty</p>
         <ul id="cart-items"></ul>
+        <p id="total-price" style="display: none; text-align: right;"></p>
+        <button id="checkout-button" style="display: none;">Checkout</button>
     </div>
     
     <div class="home-page-container">
-
         <div class="hero-image">
             <h1>SUPER HEALING</h1>
         </div> 
@@ -56,46 +58,46 @@
         <div class="products">
             <div class="slide-show">
                 <div class="slide-container">
-                    <img src="./assets/Canrendergrape.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrendergrape.png" alt="Grape">
+                    <a href="#shop" class="add-button" data-name="Grape">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/Canrenderlemonice.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrenderlemonice.png" alt="Lemon Ice">
+                    <a href="#shop" class="add-button" data-name="Lemon Ice">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/Canrendermandarin.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrendermandarin.png" alt="Mandarin">
+                    <a href="#shop" class="add-button" data-name="Mandarin">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/Canrenderpeach.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrenderpeach.png" alt="Peach">
+                    <a href="#shop" class="add-button" data-name="Peach">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/Canrenderpear.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrenderpear.png" alt="Pear">
+                    <a href="#shop" class="add-button" data-name="Pear">Shop</a>
                 </div>
             </div>
             <div class="slide-show">
                 <div class="slide-container">
-                    <img src="./assets/Canrendergrape.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrendergrape.png" alt="Grape">
+                    <a href="#shop" class="add-button" data-name="Grape">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/Canrenderlemonice.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrenderlemonice.png" alt="Lemon Ice">
+                    <a href="#shop" class="add-button" data-name="Lemon Ice">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/Canrendermandarin.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrendermandarin.png" alt="Mandarin">
+                    <a href="#shop" class="add-button" data-name="Mandarin">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/Canrenderpeach.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrenderpeach.png" alt="Peach">
+                    <a href="#shop" class="add-button" data-name="Peach">Shop</a>
                 </div>
                 <div class="slide-container">
-                    <img src="./assets/Canrenderpear.png">
-                    <a href="#shop" class="add-button">Shop</a>
+                    <img src="./assets/Canrenderpear.png" alt="Pear">
+                    <a href="#shop" class="add-button" data-name="Pear">Shop</a>
                 </div>
             </div>
         </div>
@@ -119,7 +121,6 @@
         </div>
 
         <div class="nutrition-container">
-
             <div class="top-box">
                 <div class="top-item">Sustainable Production</div>
                 <div class="top-item">Improves Healing</div>
@@ -128,32 +129,52 @@
 
             <div class="bottom-box">
                 <div class="bottom-item">
-                    <img src="./assets/CellSymbol.jpg">
+                    <img src="./assets/CellSymbol.jpg" alt="Cell Symbol">
                     Improved Cell Growth</div>
                 <div class="bottom-item">
-                    <img src="./assets/MushroomSymbol.jpg">
+                    <img src="./assets/MushroomSymbol.jpg" alt="Mushroom Symbol">
                     Made from Mushrooms</div>
                 <div class="bottom-item">
-                    <img src="./assets/SugarSymbol.jpg">
+                    <img src="./assets/SugarSymbol.jpg" alt="Sugar Symbol">
                     Low Cane Sugar</div>
                 <div class="bottom-item">
-                    <img src="./assets/TeaSymbol.jpg">
+                    <img src="./assets/TeaSymbol.jpg" alt="Tea Symbol">
                     One Month Fermentation</div>
             </div>
         </div>
     </div>
 
     <div class="artwork-container">
-        <div class="artwork"></div>
-        <div class="artwork"></div>
-        <div class="artwork"></div>
-        <div class="artwork"></div>
-        <div class="artwork"></div>
-        <div class="artwork"></div>
-        <div class="artwork"></div>
-        <div class="artwork"></div>
-        <div class="artwork"></div>
-        <div class="artwork"></div>
+        <div class="artwork">
+            <img src="./assets/Artwork1.jpg" alt="Artwork1">
+        </div>
+        <div class="artwork">
+            <img src="./assets/Artwork2.jpg" alt="Artwork2">
+        </div>
+        <div class="artwork">
+            <img src="./assets/Artwork3.jpg" alt="Artwork3">
+        </div>
+        <div class="artwork">
+            <img src="./assets/Artwork4.jpg" alt="Artwork4">
+        </div>
+        <div class="artwork">
+            <img src="./assets/Artwork5.png" alt="Artwork5">
+        </div>
+        <div class="artwork">
+            <img src="./assets/Artwork6.jpg" alt="Artwork6">
+        </div>
+        <div class="artwork">
+            <img src="./assets/Artwork7.jpg" alt="Artwork7">
+        </div>
+        <div class="artwork">
+            <img src="./assets/Artwork8.jpg" alt="Artwork8">
+        </div>
+        <div class="artwork">
+            <img src="./assets/Artwork9.png" alt="Artwork9">
+        </div>
+        <div class="artwork">
+            <img src="./assets/Artwork10.png" alt="Artwork10">
+        </div>
     </div>
 
     <footer>
@@ -194,6 +215,6 @@
             <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
           </div>
         </div>
-      </footer>
+    </footer>
 </body>
 </html>

@@ -74,18 +74,19 @@ nav .logo a {
     text-decoration: none;
 }
 
-.fixed-button {
+.menu-button {
     display: none;
 }
 
 .cart {
     display: none;
     flex-direction: column;
+    justify-content: space-between; 
     position: fixed;
     right: 0;
     z-index: 1000;
     width: 400px;
-    height: 400px;
+    height: 750px;
     margin-top: 120px;
     margin-right: 50px;
     background-color: white;
@@ -93,8 +94,64 @@ nav .logo a {
     text-align: center;
 }
 
+.cart h2 {
+    margin: 20px;
+}
+
 .cart.active {
     display: flex;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+}
+
+#cart-items li {
+    margin: 10px 0;
+    width: 100%;
+    text-align: left; 
+}
+
+#checkout-button {
+    background-color: black;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    text-transform: uppercase;
+    width: 90%; 
+    height: 60px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+
+.remove-button {
+    background-color: black;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    text-transform: uppercase;
+    width: 120px;
+    height: 40px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+    padding-right: 20px;
 }
 
 .hero-image {
@@ -128,7 +185,6 @@ nav .logo a {
     display: flex;
     flex-direction: column;
     padding: 40px;
-    text-align: center;
 }
 
 .information-container p {
@@ -136,10 +192,12 @@ nav .logo a {
     font-size: 25px;
     padding-bottom: 20px;
     line-height: 1;
+    padding-right: 200px;
 }
 
 .information-container ul {
     padding: 0;
+    margin: 20px 0 0 0;
     list-style: none;
 }
 
@@ -187,6 +245,11 @@ nav .logo a {
 .slide-container {
     position: relative;
     display: inline-block;
+}
+
+.slide-container:hover {
+    background-color: #e6e6e6; 
+    transition: background-color 0.3s ease;
 }
 
 .add-button {
@@ -246,7 +309,7 @@ nav .logo a {
     text-align: center;
     width: 33.333%; 
     box-sizing: border-box; 
-    border: 2px solid #000; 
+    border: 2px solid #39393a; 
 }
 
 .bottom-box {
@@ -258,7 +321,7 @@ nav .logo a {
     width: 100%;
     margin: 0;
     box-sizing: border-box;
-    border: 2px solid #000; 
+    border: 2px solid #39393a; 
 }
 
 .bottom-box img {
@@ -290,8 +353,7 @@ nav .logo a {
     position: relative;
     display: flex;
     width: 300px; 
-    height: 300px;
-    background-color: red;
+    height: 424.2px;
     margin: 10px;
     overflow: hidden;
 }
@@ -312,9 +374,9 @@ nav .logo a {
 }
 
 footer {
-    background-color: #f8f8f8;
+    background-color: #e6e6e6;
     padding: 20px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #39393a;
   }
   
   .footer-container {
@@ -337,12 +399,17 @@ footer {
   }
   
   .footer-signup button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #333;
+    background-color: black;
     color: white;
-    border-radius: 4px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    text-transform: uppercase;
+    text-align: center;
     cursor: pointer;
+    z-index: 1000;
+    width: 100px; 
+    height: 35px; 
+    font-size: 16px;
   }
   
   .footer-links {
@@ -412,7 +479,7 @@ footer {
         flex-grow: 1;
     }
 
-    .fixed-button {
+    .menu-button {
         display: block;
         position: fixed;
         bottom: 20px;
@@ -421,11 +488,43 @@ footer {
         padding: 10px 20px;
         background-color: black;
         color: white;
-        border: none;
+        border: 2px solid transparent;
         border-radius: 30px;
         text-transform: uppercase;
         text-align: center;
         cursor: pointer;
         z-index: 1000;
+        width: 150px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .nutrition-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .nutrition-container .top-box {
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+
+    .nutrition-container .bottom-box {
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+
+    .top-box,
+    .bottom-box {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .top-item,
+    .bottom-item {
+        width: 100%; 
+        box-sizing: border-box;
+        text-align: center; 
     }
 }
