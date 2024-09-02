@@ -1,6 +1,4 @@
-// Wait for the DOM content to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', () => {
-    // Get references to DOM elements
     const cartButton = document.getElementById('cartButton');
     const cart = document.getElementById('cart');
     const addToCartButtons = document.querySelectorAll('.add-button');
@@ -8,88 +6,99 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalPriceElement = document.getElementById('total-price');
     const emptyCartMessage = document.getElementById('empty-cart-message');
     const checkoutButton = document.getElementById('checkout-button');
-    const menuButton = document.querySelector('.menu-button'); 
+    const menuButton = document.querySelector('.menu-button');
+    const overlay = document.getElementById('overlay');
 
-    // Initialize cart items array and total price
     let cartItems = [];
     let totalPrice = 0;
 
     // Toggle the menu overlay and change the menu button text
-    menuButton.addEventListener('click', function() {
-        const overlay = document.getElementById('overlay');
-        overlay.classList.toggle('active');
-        menuButton.textContent = overlay.classList.contains('active') ? 'X' : 'Menu'; 
+    menuButton.addEventListener('click', () => {
+        const isActive = overlay.classList.toggle('active');
+        menuButton.textContent = isActive ? 'X' : 'Menu';
     });
 
     // Toggle the cart visibility and update the cart button text
     cartButton.addEventListener('click', () => {
-        cart.classList.toggle('active');
-        cartButton.textContent = cart.classList.contains('active') ? 'X' : getCartButtonText();
+        toggleCartVisibility();
+    });
+
+    // Close the cart when clicking outside of it
+    document.addEventListener('click', (event) => {
+        if (!cart.contains(event.target) && !cartButton.contains(event.target)) {
+            closeCart();
+        }
+    });
+
+    // Automatically close the cart and overlay if window size is under 800px
+    window.addEventListener('resize', () => {
+        if (window.innerWidth < 800) {
+            closeCart();
+            if (overlay.classList.contains('active')) {
+                overlay.classList.remove('active');
+                menuButton.textContent = 'Menu';
+            }
+        }
     });
 
     // Add event listeners to all 'Add to Cart' buttons
     addToCartButtons.forEach(button => {
         button.addEventListener('click', (event) => {
-            // Get product image source and name
             const productImage = event.target.previousElementSibling.src;
             const productName = event.target.getAttribute('data-name');
-            // Add item to cart and update button text if necessary
             addItemToCart(productName, productImage);
-            if (!cart.classList.contains('active')) {
-                cartButton.textContent = getCartButtonText();
-            }
+            updateCartButtonText();
         });
     });
 
-    // Function to add an item to the cart
+    function toggleCartVisibility() {
+        const isActive = cart.classList.toggle('active');
+        cartButton.textContent = isActive ? 'X' : getCartButtonText();
+    }
+
+    function closeCart() {
+        cart.classList.remove('active');
+        updateCartButtonText();
+    }
+
     function addItemToCart(productName, productImage) {
-        // Create new elements for the cart item
         const cartItem = document.createElement('li');
-        const itemImage = document.createElement('img');
-        const itemName = document.createElement('span');
-        const itemPrice = document.createElement('span');
-        const removeButton = document.createElement('button');
-        
-        // Set properties for the new cart item elements
-        itemImage.src = productImage;
-        itemImage.style.width = '150px';
-        itemImage.style.height = '150px';
+        cartItem.innerHTML = `
+            <img src="${productImage}" style="width: 150px; height: 150px;">
+            <span>${productName}</span>
+            <span>- $3.00</span>
+            <button class="remove-button">Remove</button>
+        `;
 
-        itemName.textContent = ` ${productName}`;
-        itemPrice.textContent = ` - $3.00`;
-
-        removeButton.textContent = 'Remove';
-        removeButton.classList.add('remove-button'); 
-        // Add event listener to remove the item from the cart
-        removeButton.addEventListener('click', () => {
+        const removeButton = cartItem.querySelector('.remove-button');
+        removeButton.addEventListener('click', (event) => {
+            event.stopPropagation();
             removeItemFromCart(cartItem, productImage);
-            if (!cart.classList.contains('active')) {
-                cartButton.textContent = getCartButtonText();
-            }
         });
 
-        // Append elements to the cart item and cart items list
-        cartItem.appendChild(itemImage);
-        cartItem.appendChild(itemName);
-        cartItem.appendChild(itemPrice);
-        cartItem.appendChild(removeButton);
+        cartItem.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        });
+
         cartItemsList.appendChild(cartItem);
         cartItems.push(productImage);
         updateCartState(3);
     }
 
-    // Function to remove an item from the cart
     function removeItemFromCart(cartItem, productImage) {
         cartItemsList.removeChild(cartItem);
         cartItems = cartItems.filter(item => item !== productImage);
         updateCartState(-3);
     }
 
-    // Function to update the cart's state
     function updateCartState(amount) {
         totalPrice += amount;
-        // Update the visibility of cart messages and total price
-        if (cartItems.length === 0) {
+
+        // Update total price and checkout button visibility
+        if (totalPrice <= 0) {
+            totalPrice = 0;
             emptyCartMessage.style.display = 'block';
             totalPriceElement.style.display = 'none';
             checkoutButton.style.display = 'none';
@@ -101,14 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to get the text for the cart button based on the number of items
     function getCartButtonText() {
-        if (cartItems.length === 0) {
-            return 'Cart';
-        } else if (cartItems.length > 9) {
-            return 'Cart (9+)';
-        } else {
-            return `Cart (${cartItems.length})`;
+        return cartItems.length === 0 ? 'Cart' : `Cart (${cartItems.length > 9 ? '9+' : cartItems.length})`;
+    }
+
+    function updateCartButtonText() {
+        if (!cart.classList.contains('active')) {
+            cartButton.textContent = getCartButtonText();
         }
     }
 });

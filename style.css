@@ -1,4 +1,4 @@
-/* Font Definitions */
+/* General Styles */
 @font-face {
     font-family: NeueMachinaRegular;
     src: url("assets/NeueMachina-Regular.otf") format("opentype");
@@ -9,19 +9,17 @@
     src: url("assets/NeueMachina-Ultrabold.otf") format("opentype");
 }
 
-/* General Styles for All Elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
     font-family: NeueMachinaRegular;
 }
 
-/* Overlay for Mobile Menu */
+/* Overlay styling for modal or pop-up */
 .overlay {
     display: none; 
     position: fixed;
@@ -33,13 +31,14 @@ body {
     z-index: 999; 
 }
 
+/* Active overlay styling to show the overlay */
 .overlay.active {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Centered Menu Links */
+/* Centered menu link styling */
 .centered-menu a {
     text-transform: uppercase; 
     font-size: 24px; 
@@ -51,16 +50,25 @@ body {
     text-decoration: none; 
     padding: 10px; 
     border-radius: 30px; 
+    border: 2px solid transparent;
+
 }
 
 .centered-menu a:hover {
-    background-color: black; 
-    color: white; 
+    background-color: white; 
     padding: 10px; 
-    border-radius: 30px; 
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
-/* Navigation Bar Styling */
+/* Navbar styling */
 nav {
     position: absolute;
     top: 0;
@@ -73,7 +81,6 @@ nav {
     z-index: 10;
 }
 
-/* Navigation Menu List */
 nav ul {
     padding: 0;
     margin: 0;
@@ -85,7 +92,7 @@ nav ul li {
     margin: 0 10px;
 }
 
-/* Navigation Menu Links */
+/* Navbar button styling */
 nav ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -107,7 +114,6 @@ nav ul li a:hover {
     color: white;
 }
 
-/* Logo Styling in Navigation */
 nav .logo {
     flex-grow: 0;
     text-align: center;
@@ -120,12 +126,11 @@ nav .logo a {
     text-decoration: none;
 }
 
-/* Menu Button for Mobile View */
 .menu-button {
     display: none;
 }
 
-/* Shopping Cart Styling */
+/* Cart styling (hidden by default) */
 .cart {
     display: none;
     flex-direction: column;
@@ -150,21 +155,22 @@ nav .logo a {
     display: flex;
 }
 
-/* Cart Items List */
+/* Cart item styling */
 #cart-items {
-    list-style-type: none;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-right: 20px;
+    list-style: none;
+    max-height: 500px; 
+    overflow-y: scroll; 
 }
 
 #cart-items li {
-    margin: 10px 0;
-    width: 100%;
-    text-align: left; 
+    padding: 10px; 
+    margin: 0;
+    border-bottom: 1px solid #ddd;
 }
 
 #checkout-button {
@@ -203,9 +209,8 @@ nav .logo a {
     padding-right: 20px;
 }
 
-/* Hero Image Styling */
 .hero-image {
-    background-image: url("assets/DITHeroImage.png");
+    background-image: url("assets/Heroimage.png");
     width: 100%;
     height: 100vh;
     background-position: center;
@@ -223,15 +228,13 @@ nav .logo a {
     color: rgb(57, 57, 58);
 }
 
-/* Home Page Container Styling */
 .home-page-container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: rgb(230, 230, 230);
+    background-color: 230, 230, 230;
 }
 
-/* Information Container Styling */
 .information-container {
     flex: 1;
     display: flex;
@@ -275,12 +278,13 @@ nav .logo a {
     color: black;
 }
 
-/* Product Image Slider */
+/* Products container styling (horizontal overflow hidden) */
 .products {
     overflow: hidden;
     white-space: nowrap;
 }
 
+/* Pause slide-show animation on hover over products */
 .products:hover .slide-show {
     animation-play-state: paused;
 }
@@ -295,7 +299,6 @@ nav .logo a {
     width: 600px;
 }
 
-/* Slide Container */
 .slide-container {
     position: relative;
     display: inline-block;
@@ -306,7 +309,6 @@ nav .logo a {
     transition: background-color 0.3s ease;
 }
 
-/* Add Button Styling */
 .add-button {
     position: absolute;
     bottom: 20px;
@@ -332,7 +334,6 @@ nav .logo a {
     color: black;
 }
 
-/* Benefits Container Styling */
 .benefits-container {
     flex: 1;
     display: flex;
@@ -343,9 +344,13 @@ nav .logo a {
 
 .benefits-container h1{
     margin: 20px;
+    font-family: NeueMachinaUltraBond;
 }
 
-/* Nutrition Container Styling */
+.benefits-container p{
+    margin: 20px;
+}
+
 .nutrition-container {
     display: flex;
     flex-direction: column;
@@ -353,8 +358,7 @@ nav .logo a {
     max-width: 1200px;
     margin: 100px auto;
 }
-
-/* Top Box Styling */
+/* Top container for Nutrition info */
 .top-box {
     display: flex;
     width: 100%;
@@ -362,6 +366,7 @@ nav .logo a {
 }
 
 .top-item {
+    font-family: NeueMachinaUltraBond;
     color: black;
     padding: 20px;
     text-align: center;
@@ -370,7 +375,7 @@ nav .logo a {
     border: 2px solid #39393a; 
 }
 
-/* Bottom Box Styling */
+/* Bottom container for Nutrition info */
 .bottom-box {
     display: flex;
     justify-content: space-between;
@@ -398,7 +403,6 @@ nav .logo a {
     border: 1px solid #fff; 
 }
 
-/* Artwork Container Styling */
 .artwork-container {
     display: flex;
     flex-wrap: wrap;
@@ -408,8 +412,7 @@ nav .logo a {
     margin: 0 auto; 
     padding: 20px 0;
 }
-
-/* Artwork Item Styling */
+ 
 .artwork {
     position: relative;
     display: flex;
@@ -434,33 +437,34 @@ nav .logo a {
     background-color: rgba(0, 0, 0, 0.5); 
 }
 
-/* Footer Styling */
+/* Footer styles */
+
 footer {
     background-color: #e6e6e6;
     padding: 20px;
     border-top: 1px solid #39393a;
-}
+  }
   
-.footer-container {
+  .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-}
+  }
   
-.footer-signup {
+  .footer-signup {
     text-align: center;
     margin-bottom: 20px;
-}
+  }
   
-.footer-signup input[type="email"] {
+  .footer-signup input[type="email"] {
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
+  }
   
-.footer-signup button {
+  .footer-signup button {
     background-color: black;
     color: white;
     border: 2px solid transparent;
@@ -472,56 +476,56 @@ footer {
     width: 100px; 
     height: 35px; 
     font-size: 16px;
-}
+  }
   
-.footer-links {
+  .footer-links {
     display: flex;
     justify-content: space-between;
-}
+  }
   
-.footer-column {
+  .footer-column {
     flex: 1;
     margin: 0 15px;
-}
+  }
   
-.footer-column h4 {
+  .footer-column h4 {
     margin-bottom: 10px;
     font-size: 16px;
-}
+  }
   
-.footer-column ul {
+  .footer-column ul {
     list-style: none;
     padding: 0;
-}
+  }
   
-.footer-column ul li {
+  .footer-column ul li {
     margin-bottom: 8px;
-}
+  }
   
-.footer-column ul li a {
+  .footer-column ul li a {
     text-decoration: none;
     color: #333;
-}
+  }
   
-.footer-bottom {
+  .footer-bottom {
     text-align: center;
     margin-top: 20px;
-}
+  }
   
-.footer-bottom p {
+  .footer-bottom p {
     margin: 5px 0;
-}
+  }
   
-.footer-bottom a {
+  .footer-bottom a {
     text-decoration: none;
     color: #333;
-}
+  }
   
-.footer-bottom a:hover {
+  .footer-bottom a:hover {
     text-decoration: underline;
-}
-
-/* Keyframes for Slider Animation */
+  }
+  
+/* Animation from slideshow */
 @keyframes slide {
     from {
         transform: translateX(0);
@@ -531,17 +535,21 @@ footer {
     }
 }
 
-/* Media Queries for Mobile View */
+/* All media querries for when window is under 800px wide */
 @media (max-width: 800px) {
+
+    /* deletes nav items */
     nav ul {
         display: none;
     }
 
+    /* Centeres logo when nav items are deleted */
     nav .logo {
         text-align: center;
         flex-grow: 1;
     }
 
+    /* Creates menu button when nav items are gone */
     .menu-button {
         display: block;
         position: fixed;
@@ -562,6 +570,7 @@ footer {
         font-size: 16px;
     }
 
+    /* Resizes nutrition containers to make them fit in smaller window size */
     .nutrition-container {
         width: 100%;
         padding: 0;
