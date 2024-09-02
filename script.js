@@ -38,6 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.classList.remove('active');
                 menuButton.textContent = 'Menu';
             }
+        } else {
+            // Ensure the overlay is removed if the window size is greater than or equal to 800px
+            if (overlay.classList.contains('active')) {
+                overlay.classList.remove('active');
+                menuButton.textContent = 'Menu';
+            }
         }
     });
 
